@@ -1,60 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pokédex</title>
-  <style>
-    .pokemon {
-      display: inline-block;
-      margin: 10px;
-      text-align: center;
-      border: 1px solid #ccc;
-      padding: 10px;
-      border-radius: 5px;
-    }
-    .pokemon img {
-      width: 100px;
-      height: 100px;
-    }
-  </style>
-</head>
-<body>
-  <h1>Pokédex</h1>
-  <div id="pokedex"></div>
+  <head>
+    <meta charset="utf-8" />
+    <title>Pokédex | Angular</title>
+    <meta
+      name="description"
+      content="Desarrollado por Keiler Mora con Angular. Consume la api Restful PokéApi."
+    />
 
-  <script>
-    async function fetchPokemon() {
-      const pokedexContainer = document.getElementById('pokedex');
-      try {
-        // Obtener los primeros 20 Pokémon
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20');
-        const data = await response.json();
+    <!-- facebook open graph -->
+    <meta property="og:url" content="https://keilermora.github.io/pokedex-angular/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://keilermora.github.io/pokedex-angular/og-image.jpg" />
+    <meta property="og:title" content="Pokédex | Angular" />
+    <meta
+      property="og:description"
+      content="Desarrollado por Keiler Mora con Angular. Consume la api Restful PokéApi."
+    />
+    <meta property="og:locale" content="es_VE" />
 
-        data.results.forEach(async (pokemon) => {
-          const pokemonResponse = await fetch(pokemon.url);
-          const pokemonData = await pokemonResponse.json();
+    <base href="/" />
 
-          const pokemonElement = document.createElement('div');
-          pokemonElement.classList.add('pokemon');
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script checks to see if a redirect is present in the query string,
+      // converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&');
+            })
+            .join('?');
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
 
-          const image = document.createElement('img');
-          image.src = pokemonData.sprites.front_default;
-
-          const name = document.createElement('p');
-          name.textContent = pokemonData.name;
-
-          pokemonElement.appendChild(image);
-          pokemonElement.appendChild(name);
-          pokedexContainer.appendChild(pokemonElement);
-        });
-      } catch (error) {
-        console.error('Error fetching Pokémon:', error);
-        pokedexContainer.innerHTML = '<p>Error loading Pokémon. Please try again later.</p>';
-      }
-    }
-
-    fetchPokemon();
-  </script>
-</body>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
 </html>
