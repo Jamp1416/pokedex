@@ -2,7 +2,7 @@
 
 ## Introducción
 
-Este documento te guiará paso a paso para desplegar la aplicación web Pokedex en Azure Static Web Apps, utilizando GitHub como repositorio de código fuente. Implementaremos un flujo de integración y despliegue continuo (CI/CD) que permitirá que cada cambio en el código se refleje automáticamente en la aplicación publicada. ¡Vamos a ello!
+Este documento te guiará paso a paso para desplegar la aplicación web Pokedex en Azure Static Web Apps, utilizando GitHub como repositorio de código fuente. Implementaremos un flujo de integración y despliegue continuo (CI/CD) que permitirá que cada cambio en el código se refleje automáticamente en la aplicación publicada.
 
 ## Prerrequisitos
 
@@ -68,6 +68,16 @@ Para mantener un estándar profesional, utilizaremos la siguiente nomenclatura:
 3. En la parte superior derecha, encontrarás la **URL** generada para tu aplicación.
 4. Copia esta URL y ábrela en tu navegador.
 5. Verifica que la aplicación Pokedex cargue correctamente.
+6. Revisa la seguridad de tu aplicación utilizando herramientas como [SecurityHeaders.com](https://securityheaders.com/) para asegurarte de que los encabezados de seguridad están correctamente configurados como en mi caso dio A.
+
+### Paso 5: Verificar el Despliegue Automático (GitHub Actions)
+
+1. Ve a tu repositorio de GitHub https://github.com/Jamp1416/pokedex.
+2. Haz clic en la pestaña **Actions** en el menú superior.
+3. Deberías ver un workflow llamado "Azure Static Web Apps CI/CD".
+4. Verifica que el estado sea verde (✓) indicando que el despliegue fue exitoso.
+5. Si hay errores (❌), revisa los logs para identificar y solucionar el problema.
+
 
 
 
