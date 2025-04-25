@@ -1,51 +1,26 @@
-## Requisitos de Despliegue
+# Proceso de Creación de una Cuenta de Azure for Students
 
-### Prerrequisitos
-1. Cuenta de Azure for Students o suscripción de Azure
-2. Cuenta de GitHub
-3. Git instalado localmente
+Azure for Students ofrece a los estudiantes un crédito de 100 USD al crear una cuenta gratuita. No se necesita tarjeta de crédito y se dispone de doce meses de servicios de Azure gratis.
 
-### Pasos para el Despliegue
+## Paso 1: Accede al Portal de Azure for Students
+- Visita la página de [Azure for Students](https://azure.microsoft.com/es-es/free/students).
 
-#### Paso 1: Hacer un Fork del Repositorio
-1. Ve a: https://github.com/rcuello/ac4dem1a.git
-2. Haz clic en "Fork" en la esquina superior derecha
-3. Selecciona tu cuenta de GitHub como destino
+## Paso 2: Inicia el Proceso de Registro
+- Haz clic en "Empezar gratis" para iniciar el proceso de creación de la cuenta.
 
-#### Paso 2: Crear una Static Web App en Azure
-1. Inicia sesión en el https://portal.azure.com
-2. Busca y selecciona "Static Web Apps"
-3. Haz clic en "Crear" para iniciar la creación de una nueva Static Web App
-4. Completa los detalles:
-   - Grupo de Recursos: `rg-pokedex-prod` (crea uno nuevo o selecciona uno existente)
-   - Nombre: `swa-pokedex-portal-prod-jm`
-   - Plan de hospedaje: Gratis
-   - Región: (Se distribuye automáticamente mediante CDN)
+## Paso 3: Completa el Formulario de Registro
+- **Información Personal**: Introduce tu correo electrónico, número de teléfono y datos personales.
+- **Verificación de Identidad**: Azure te pedirá que verifiques tu identidad mediante un número de teléfono. No se necesita tarjeta de crédito para esta oferta.
+- **Aceptación de Términos**: Acepta los términos y condiciones del servicio.
 
-#### Paso 3: Conectar con GitHub y Configurar el Despliegue
-1. Selecciona GitHub como directiva de autorización de implementación
-2. Vincula tu cuenta de GitHub (en este caso: Jamp1416)
-3. Configura los ajustes de despliegue:
-   - Organización: Tu nombre de usuario de GitHub
-   - Repositorio: pokedex
-   - Rama: main
-4. Configuración de compilación:
-   - Preset de compilación: Personalizado
-   - Ubicación de la aplicación: `./sistemas-distribuidos`
-   - Ubicación de la API: (dejarlo vacío)
-   - Ubicación del artefacto de la aplicación: `dist/pokedex-angular`
-5. Haz clic en "Revisar + Crear" y luego en "Crear"
+## Paso 4: Configuración de la Cuenta
+- Una vez completado el formulario, recibirás un correo de confirmación. Sigue las instrucciones para verificar tu cuenta.
+- Inicia sesión en el [Portal de Azure](https://portal.azure.com/) con tus nuevas credenciales.
 
-#### Paso 4: Verificar el Despliegue
-1. Una vez que se complete la implementación, ve a la sección Static Web Apps en el Portal de Azure
-2. Copia la URL generada y ábrela en tu navegador
-3. Verifica que la aplicación Pokedex cargue correctamente
+## Paso 5: Explora Azure
+- Ahora puedes empezar a explorar los servicios de Azure. Recibirás un crédito de 100 USD para usar en los primeros 12 meses y acceso a servicios gratuitos durante ese período.
 
-#### Paso 5: Verificar el Despliegue Automático (GitHub Actions)
-1. Ve a tu repositorio de GitHub
-2. Haz clic en la pestaña "Actions"
-3. Deberías ver un workflow llamado "Azure Static Web Apps CI/CD"
-4. Comprueba si el despliegue fue exitoso (marca verde)
-
+## Recursos Adicionales 
+- [Calculadora de Precios de Azure](https://azure.microsoft.com/es-es/pricing/calculator/): Estima tus costes mensuales 
 
 
